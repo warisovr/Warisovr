@@ -4,110 +4,8 @@
   <meta charset="UTF-8" />
   <title>Music | warisovr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #050509;
-      color: #f5f5f5;
-    }
-    header {
-      background: rgba(5, 5, 9, 0.95);
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .nav-links a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #ccc;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.95rem;
-    }
-    .nav-links a:hover {
-      color: #fff;
-    }
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-    }
-    .section-title {
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 2rem;
-    }
-    .release {
-      margin-bottom: 3rem;
-      padding: 2rem;
-      border: 1px solid #333;
-      border-radius: 1rem;
-      background: #0b0b10;
-    }
-    .release h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    .release-type {
-      font-size: 0.9rem;
-      color: #bbb;
-      margin-bottom: 1.5rem;
-    }
-    .tracklist {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem;
-    }
-    .tracklist li {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.95rem;
-    }
-    .tracklist li:last-child {
-      border-bottom: none;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid #555;
-      text-decoration: none;
-      color: #fff;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    .btn:hover {
-      filter: brightness(1.15);
-    }
-    footer {
-      border-top: 1px solid #222;
-      padding: 1.5rem;
-      text-align: center;
-      color: #999;
-      font-size: 0.8rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <!-- Link to centralized stylesheet -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
@@ -124,7 +22,7 @@
 
 <main>
   <section class="section">
-    <h1 class="section-title">Discography</h1>
+    <h1 class="section-title large">Discography</h1>
 
     <!-- EP: Bag Work -->
     <div class="release">
@@ -174,6 +72,15 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Mark current nav link
+  (function(){
+    var path = location.pathname.split('/').pop() || 'index.html';
+    var links = document.querySelectorAll('.nav-links a');
+    links.forEach(function(a){
+      if (a.getAttribute('href') === path) a.setAttribute('aria-current','page');
+    });
+  })();
 </script>
 
 </body>

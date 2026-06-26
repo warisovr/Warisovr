@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music | warisovr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #050509;
+      color: #f5f5f5;
+    }
+    header {
+      background: rgba(5, 5, 9, 0.95);
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+    }
+    .release {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border: 1px solid #333;
+      border-radius: 1rem;
+      background: #0b0b10;
+    }
+    .release h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .release-type {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-bottom: 1.5rem;
+    }
+    .tracklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+    .tracklist li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+    }
+    .tracklist li:last-child {
+      border-bottom: none;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid #555;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .btn:hover {
+      filter: brightness(1.15);
+    }
+    footer {
+      border-top: 1px solid #222;
+      padding: 1.5rem;
+      text-align: center;
+      color: #999;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">warisovr</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section">
+    <h1 class="section-title">Discography</h1>
+
+    <!-- EP: Bag Work -->
+    <div class="release">
+      <h2>Bag Work</h2>
+      <div class="release-type">EP · warisovr</div>
+      <ul class="tracklist">
+        <li>Track 1</li>
+        <li>Track 2</li>
+        <li>Track 3</li>
+        <li>Track 4</li>
+      </ul>
+      <a href="https://www.youtube.com/watch?v=LYA8LFSbuPY&list=OLAK5uy_nme6LXHWSk_07wB4rKBgddZKPnVa4UGVA" class="btn" target="_blank">
+        Listen on YouTube Music
+      </a>
+    </div>
+
+    <!-- EP: 3 Music -->
+    <div class="release">
+      <h2>3 Music</h2>
+      <div class="release-type">EP · warisovr</div>
+      <ul class="tracklist">
+        <li>Track 1</li>
+        <li>Track 2</li>
+        <li>Track 3</li>
+      </ul>
+      <a href="https://www.youtube.com/watch?v=Mql9sNTcL5U&list=OLAK5uy_m3v11hCgz5x3Wgi_tgiGAfltGuKwg6b9w" class="btn" target="_blank">
+        Listen on YouTube Music
+      </a>
+    </div>
+
+    <!-- Singles -->
+    <div class="release">
+      <h2>Singles</h2>
+      <div class="release-type">Singles · warisovr</div>
+      <ul class="tracklist">
+        <li>Single Title 1</li>
+        <li>Single Title 2</li>
+      </ul>
+      <a href="#" class="btn">View All</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> warisovr. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

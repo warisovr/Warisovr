@@ -1,10 +1,402 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+  <meta charset="UTF-8" />
+  <title>warisovr | Official Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official home page of music artist warisovr." />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #050509;
+      color: #f5f5f5;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(5, 5, 9, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      color: #c0c0c0;
+      max-width: 32rem;
+    }
+
+    .hero-buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid #555;
+      background: transparent;
+      color: #f5f5f5;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff3366, #ff9a1f);
+      border: none;
+    }
+
+    .btn:hover {
+      filter: brightness(1.1);
+    }
+
+    .hero-card {
+      border-radius: 1.5rem;
+      border: 1px solid #333;
+      background: radial-gradient(circle at top left, #ff3366 0, #050509 45%, #050509 100%);
+      padding: 2rem;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-card p {
+      margin: 0 0 1.5rem;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #f5f5f5;
+    }
+
+    .track-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+
+    .track:last-child {
+      border-bottom: none;
+    }
+
+    .track-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .track-title {
+      font-weight: 500;
+    }
+
+    .track-sub {
+      font-size: 0.8rem;
+      color: #d0d0d0;
+    }
+
+    .track-actions a {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      color: #ff9a1f;
+    }
+
+    .track-actions a:hover {
+      color: #ffd36b;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #b0b0b0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      border: 1px solid #333;
+      padding: 1.3rem;
+      background: #0b0b10;
+    }
+
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #c5c5c5;
+    }
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 1.5rem 1.5rem 2rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #999;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+      }
+
+      .hero-title {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to my site!</h1>
-    <p>Coming soon...</p>
+  <header>
+    <nav class="nav">
+      <div class="logo">warisovr</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">warisovr</h1>
+        <p class="hero-subtitle">
+          Genre-bending sounds, late-night energy, and honest storytelling. This is the official home of
+          <strong>warisovr</strong>—one name across every platform.
+        </p>
+        <div class="hero-buttons">
+          <a href="music.html" class="btn btn-primary">Listen to the catalog</a>
+          <a href="about.html" class="btn">Learn more</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Latest releases</h2>
+        <p>Stream warisovr on your favorite platform and dive into the newest drops.</p>
+
+        <div class="platforms">
+          <span class="platform-pill">Spotify</span>
+          <span class="platform-pill">Apple Music</span>
+          <span class="platform-pill">YouTube</span>
+          <span class="platform-pill">SoundCloud</span>
+        </div>
+
+        <ul class="track-list">
+          <li class="track">
+            <div class="track-meta">
+              <span class="track-title">Midnight Static</span>
+              <span class="track-sub">Single · warisovr</span>
+            </div>
+            <div class="track-actions">
+              <a href="#">Play</a>
+            </div>
+          </li>
+          <li class="track">
+            <div class="track-meta">
+              <span class="track-title">Neon Echoes</span>
+              <span class="track-sub">Single · warisovr</span>
+            </div>
+            <div class="track-actions">
+              <a href="#">Play</a>
+            </div>
+          </li>
+          <li class="track">
+            <div class="track-meta">
+              <span class="track-title">Afterglow City</span>
+              <span class="track-sub">EP · warisovr</span>
+            </div>
+            <div class="track-actions">
+              <a href="#">Play</a>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Highlight sections -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Featured</h2>
+        <p class="section-subtitle">A quick snapshot of what you’ll find across the site.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Music</h3>
+          <p>
+            Explore singles, EPs, and collaborations from warisovr. Curated playlists, full discography, and links to
+            every platform live on the <strong>Music</strong> page.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>About</h3>
+          <p>
+            Get the story behind the name, influences, and creative process. Press-ready bio, photos, and contact info
+            live on the <strong>About</strong> page.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Connect</h3>
+          <p>
+            Find warisovr on social platforms under the same handle. DM-friendly, collab-ready, and always creating
+            something new.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> warisovr. All rights reserved.</span>
+      <span>
+        Follow: 
+        <a href="#">Spotify</a> ·
+        <a href="#">Apple Music</a> ·
+        <a href="#">YouTube</a> ·
+        <a href="#">Instagram</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+```
